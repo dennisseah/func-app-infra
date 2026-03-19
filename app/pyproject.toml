@@ -12,6 +12,8 @@ dependencies = [
 dev = [
     "azure-eventhub>=5.15.1",
     "azure-identity>=1.25.3",
+    "pip-audit>=2.10.0",
+    "pre-commit>=4.5.1",
 ]
 
 [tool.ruff]
