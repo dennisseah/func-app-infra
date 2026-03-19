@@ -1,0 +1,16 @@
+.git/
+.gitignore
+.venv/
+__pycache__/
+.terraform/
+infra/
+local.settings.json
+*.md
+LICENSE
+Taskfile.yml
+uv.lock
+requirements.dev.txt
+.python-version
+.python_packages/
+.funcignore
+send_event.py
