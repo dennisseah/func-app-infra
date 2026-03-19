@@ -48,6 +48,7 @@ resource "azurerm_linux_function_app" "infrafly_app" {
     EVENT_HUB_NAME                              = azurerm_eventhub.infrafly_eventhub.name
   }
   site_config {
+    always_on = true
     application_stack {
       python_version = "3.12"
     }
