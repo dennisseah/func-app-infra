@@ -20,7 +20,7 @@ with p:
 #    --scope $(az eventhubs namespace show --resource-group denz_infrafly_rg --name denz-infrafly-eventhub-ns --query id -o tsv)
 
 
-az monitor app-insights query \
-  --app denz-appinsights-infrafly-func-app \
-  --resource-group denz_infrafly_rg \
-  --analytics-query "traces | where timestamp > ago(2m) and message contains 'Event Hub trigger fired' | project timestamp, message, operation_Id"
+# az monitor app-insights query \
+#   --app denz-appinsights-infrafly-func-app \
+#   --resource-group denz_infrafly_rg \
+#   --analytics-query "traces | where timestamp > ago(2m) and message contains 'Event Hub trigger fired' | project timestamp, message, operation_Id"
