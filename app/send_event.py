@@ -26,5 +26,4 @@ with p:
 #   --app denz-appinsights-infrafly-func-app \
 #   --resource-group denz_infrafly_rg \
 #   --analytics-query \
-#   "traces | where timestamp > ago(2m) and message contains 'Event Hub trigger fired' \
-#   | project timestamp, message, operation_Id"
+#   "traces | where timestamp > ago(2m) and message contains 'Event Hub trigger fired' | project timestamp, message, operation_Id" # noqa E501

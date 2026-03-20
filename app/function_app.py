@@ -2,6 +2,7 @@ import json
 import logging
 import os
 import uuid
+from datetime import datetime, timezone
 
 import azure.functions as func
 from azure.cosmos import CosmosClient
@@ -33,6 +34,7 @@ def eventhub_trigger(event: func.EventHubEvent):
 
     content = json.loads(body)
     content["status"] = "processing"
+    content["timestamp"] = datetime.now(timezone.utc).isoformat()
     item = {"id": str(uuid.uuid4()), "content": content}
     _status_container.upsert_item(item)
     logging.info("Written to Cosmos DB status container. id=%s", item["id"])

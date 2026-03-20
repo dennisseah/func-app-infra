@@ -34,6 +34,7 @@ resource "azurerm_cosmosdb_sql_container" "infrafly_cosmosdb_status" {
   account_name        = azurerm_cosmosdb_account.infrafly_cosmosdb.name
   database_name       = azurerm_cosmosdb_sql_database.infrafly_cosmosdb_db.name
   partition_key_paths = ["/id"]
+  default_ttl         = 7776000 # 3-month retention (90 days in seconds)
 }
 
 # Grant the function app's managed identity read/write access to Cosmos DB.
