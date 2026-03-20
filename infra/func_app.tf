@@ -46,6 +46,9 @@ resource "azurerm_linux_function_app" "infrafly_app" {
     # Event Hub trigger connection (managed identity — no connection string needed).
     EventHubConnection__fullyQualifiedNamespace = "${azurerm_eventhub_namespace.infrafly_eventhub_ns.name}.servicebus.windows.net"
     EVENT_HUB_NAME                              = azurerm_eventhub.infrafly_eventhub.name
+
+    # Cosmos DB connection (managed identity).
+    COSMOSDB_ENDPOINT = azurerm_cosmosdb_account.infrafly_cosmosdb.endpoint
   }
   site_config {
     always_on = true
